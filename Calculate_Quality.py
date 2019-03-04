@@ -1,5 +1,5 @@
 #评价词向量的好坏，将计算得到的词的分数存到字典中
-#   输入：训练好的词向量，使用keyedVrctor加载，路径由embeddir指定
+#   输入：训练好的词向量，使用keyedVrctor加载，路径由embeddir指定，具体有sys.argv[1]指定
 #   处理： 遍历vocabulary中的每一个词，对每个词取出most_similar_num个最相似的词，分别计算most_similar_num个词与该词的语义距离，然后对距离进行\
 #           均值或加权平均，对每个词得到一个分数
 #   输出：将{word:score}存储到词典中，路径由score_dict_dir指定
@@ -65,6 +65,7 @@ for word in bible_vocab:
     ave_distance = calculate_ave(distance, count)
     ave_distance_weight = calculate_ave(distance_weight, sum_n)
     score_dict[word] = ave_distance
+    score_weight_dict[word] = ave_distance_weight
     print('word:',word, 'ave_distance:', ave_distance)
     print('word:', word, 'ave_distance_weight', ave_distance_weight)
 
