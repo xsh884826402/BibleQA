@@ -1,0 +1,9 @@
+Calculate_Quality 使用网络计算训练出来的词向量的分数
+WordVec 用于训练词向量。
+
+
+数据：
+	word2verc_model 5352词汇
+	word2vec_model_0.25 2950词汇
+	word2vec_model_0.5	 4219词汇
+	word2vec_model_0.75 4921词汇
